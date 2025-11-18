@@ -1,7 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>about masha</title>
+    <script> 
+        console.log("ezz");
+    </script>
     <style>
     body {
         background: url(webimage5.jpg);
@@ -12,7 +15,7 @@
     }
     .square {
         width: 300px;
-        height: 600px;
+        height: 450px;
         background-color: rgba(255, 255, 255, 0.8);
         padding: 30px;
         border-radius: 10px; 
@@ -42,7 +45,7 @@
 
     
     .photo-item img {
-        width: 360px;               
+        width: 320px;               
         height: auto;               
         border-radius: 10px;        
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
@@ -78,6 +81,184 @@
     p {
         font-size: 25px;
     }
+
+    .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 50px;
+    backdrop-filter: blur(5px);
+}
+
+.social-wrapper {
+    position: relative;
+    width: 300px; 
+    height: 60px;
+}
+
+.social-text {
+    position: absolute;
+    color: white;
+    font-size: 22px;
+    opacity: 1;
+    transition: 0.3s;
+    width: 100%;
+    text-align: center;
+    line-height: 60px;
+}
+
+.icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.social-wrapper:hover .social-text {
+    opacity: 0;
+}
+
+.social-wrapper:hover .icons {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.icons img {
+    width: 45px;
+    height: 45px;
+    transition: 0.3s;
+}
+
+.icons img:hover {
+    transform: scale(1.15);
+}
+
+.ask-button {
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+    padding: 10px 18px;
+    border: 2px solid white;
+    border-radius: 8px;
+    transition: 0.3s;
+    position: relative;
+    right: 100px;
+}
+
+.ask-button:hover {
+    background: white;
+    color: black;
+    transform: scale(1.1);
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close:hover {
+    color: #000;
+}
+
+.modal-content label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.modal-content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: #45a049;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+}
+input.invalid,
+textarea.invalid {
+    border: 2px solid #ff5555;
+    background-color: #fff8f8;
+}
+
+.error {
+    color: #ff5555;
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+    min-height: 18px;
+}
+
     </style>
 </head>
 <body>
@@ -110,12 +291,116 @@
     <p>- самая модная картинка </p><br />
     <p>- где я живу </p><br />
 
-    <hr style="margin: 15px 0; border: 1px solid #ccc;">
-    <p style="font-size: 20px;">
-        Связаться со мной можно: <br /><br />
-        <a href="https://t.me/youknowMrLilUzigottheguap" target="_blank">телеграм</a> <br />
-        <a href="mailto:marialubanaa@gmail.com">почта</a>
+   
 </div>
+<footer class="footer">
+
+    <div class="social-wrapper">
+        <div class="social-text">соц. сети и связь со мной</div>
+
+        <div class="icons">
+            <a href="https://t.me/mrpatek" target="_blank">
+                <img src="telegram-icon.png" alt="Telegram">
+            </a>
+            <a href="mailto:marialubanaa@gmail.com">
+                <img src="email-icon.png" alt="Email">
+            </a>
+            <a href="https://www.instagram.com/jjeffski?igsh=MWE1dGRjdjhyNHJ3MA%3D%3D&utm_source=qr" target="_blank">
+                <img src="instagram-icon.png" alt="Instagram">
+            </a>
+        </div>
+    </div>
+
+    <button class="ask-button" id="openFormBtn">Обратная связь</button>
+</footer>
+<div id="messageModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>Напиши Маше</h2>
+        <form id="contactForm">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name">
+            <span class="error" id="name-error"></span>
+
+            <label for="email">Почта:</label>
+            <input type="email" id="email" name="email">
+            <span class="error" id="email-error"></span>
+
+            <label for="comment">Сообщение:</label>
+            <textarea id="comment" name="comment" rows="4"></textarea>
+            <span class="error" id="comment-error"></span>
+
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('messageModal');
+    const openBtn = document.getElementById('openFormBtn');
+    const closeBtn = document.getElementById('closeModal');
+    const form = document.getElementById('contactForm');
+
+    openBtn.onclick = function () {
+        modal.style.display = 'block';
+    };
+
+    closeBtn.onclick = function () {
+        modal.style.display = 'none';
+    };
+
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    };
+    function clearErrors() {
+        document.querySelectorAll('.error').forEach(el => el.textContent = '');
+        document.querySelectorAll('.invalid').forEach(el => el.classList.remove('invalid'));
+    }
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        clearErrors();
+
+        let isValid = true;
+
+        const nameInput = document.getElementById('name');
+        const name = nameInput.value.trim();
+        if (!name) {
+            document.getElementById('name-error').textContent = 'Пожалуйста, введите имя';
+            nameInput.classList.add('invalid');
+            isValid = false;
+        }
+
+        const emailInput = document.getElementById('email');
+        const email = emailInput.value.trim();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email) {
+            document.getElementById('email-error').textContent = 'Пожалуйста, введите почту';
+            emailInput.classList.add('invalid');
+            isValid = false;
+        } else if (!emailPattern.test(email)) {
+            document.getElementById('email-error').textContent = 'Неверный формат почты';
+            emailInput.classList.add('invalid');
+            isValid = false;
+        }
+        const commentInput = document.getElementById('comment');
+        const comment = commentInput.value.trim();
+        if (!comment) {
+            document.getElementById('comment-error').textContent = 'Пожалуйста, напишите сообщение';
+            commentInput.classList.add('invalid');
+            isValid = false;
+        }
+
+        if (isValid) {
+    const userName = document.getElementById('name').value.trim();
+    alert(`Спасибо, ${userName}! 💌 Ваше сообщение отправлено Маше!`);
+    form.reset();
+    modal.style.display = 'none';
+}
+    });
+});
+</script>
 
 </body>
 </html>
