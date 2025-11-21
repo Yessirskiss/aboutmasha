@@ -258,6 +258,34 @@ textarea.invalid {
     display: block;
     min-height: 18px;
 }
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+
+    padding: 25px 40px;     
+    border-radius: 16px;
+    font-size: 24px;         
+
+    min-width: 420px;       
+    max-width: 650px;
+
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s, transform 0.4s;
+    z-index: 2000;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px);
+}
+
+
 
     </style>
 </head>
@@ -394,13 +422,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (isValid) {
     const userName = document.getElementById('name').value.trim();
-    alert(`Спасибо, ${userName}! 💌 Ваше сообщение отправлено Маше!`);
+    showToast(`Спасибо, ${userName}! 💌 Сообщение отправлено!`);
     form.reset();
     modal.style.display = 'none';
 }
     });
 });
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+
+    toast.classList.add('show');
+
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 5000); 
+}
+
 </script>
+<div id="toast" class="toast"></div>
 
 </body>
 </html>
