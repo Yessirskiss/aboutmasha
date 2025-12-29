@@ -8,12 +8,10 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT;
 
-// Настройки middleware
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Настройка Nodemailer
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -22,7 +20,6 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-// Маршрут для формы
 app.post('/send', (req, res) => {
     const { name, email, comment } = req.body;
 
@@ -32,7 +29,7 @@ app.post('/send', (req, res) => {
 
     const mailOptions = {
         from: process.env.MAIL_USER,
-        to: process.env.MAIL_USER, // сообщения приходят на твою почту
+        to: process.env.MAIL_USER, 
         subject: `Новое сообщение от ${name}`,
         text: `Имя: ${name}\nEmail: ${email}\nСообщение: ${comment}`
     };
@@ -47,9 +44,10 @@ app.post('/send', (req, res) => {
     });
 });
 
-// Проверка сервера
+
 app.get('/ping', (req, res) => res.send('pong'));
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
